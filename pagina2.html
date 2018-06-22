@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<script type="text/javascript" src="javascripts.js"></script>
+
+<script type="text/javascript">
+	function miFuncion()
+	{
+		alert("Activaste la funcion miFuncion()");
+	}
+
+	function saludo()
+	{
+		alert("Cordial saludo... espero la este pasando de maravilla");
+	}
+
+	function saludoConNombre()
+	{
+		var nombre = document.getElementById("txtnombre").value; 
+		var edad = document.getElementById("txtedad").value; 
+
+		if (!nombre){
+			alert("Falta el dato de su nombre... Por favor escribálo");  
+			 return;
+		}
+		
+		if (!edad){
+			alert("Falta su edad... Por favor escribála");  
+			 return;
+		}
+
+		
+
+		var texto;
+		
+		if (edad>=18) {
+			texto =  ". Ud es mayor de edad en Colombia...";
+			}
+		else {
+			texto =  ". Ud es MENOR de edad en Colombia...";
+		}
+
+		alert("Bienvenido nuevamente " + nombre + " Su edad es  " + edad + texto  );
+	}
+
+
+
+
+
+</script>
+
+</head>
+<body>
+
+<h2 align="center">LA PÁGINA DEL PROFE...</h2>
+<form>
+
+<fieldset>
+    <legend>Presione Botón para activar la funcion miFuncion.</legend>
+	<input type="button" 
+	onclick="miFuncion()" 
+	value="Activar Función">
+</fieldset>
+<br>
+<br>
+<fieldset>
+    <legend>Presione para recibir un saludo genérico.</legend>
+		<input type="button" 
+		onclick="saludo()" 
+		value="saludo">
+</fieldset>
+<br>
+<br>
+	<fieldset>
+		<legend>Escriba su Nombre.</legend>
+		<input type="text" id="txtnombre">
+		<label>Su edad</label> 		<input type="text" id="txtedad">
+		<input type="button" 
+		onclick="saludoConNombre()" 
+		value="Enviar...">
+	</fieldset>
+<br>
+
+	<fieldset>
+			<legend>Llama la función de suma que suma 2 + 2.</legend>
+			<input type="button" onclick="sumar()" value="Sumar 2 + 2">
+	</fieldset>
+
+
+<br>
+<br>
+
+    <fieldset>
+        <legend>Ingrese dos numeros</legend>
+        <label for="">Numero 1:</label>
+        <input type="text" id="txtN1">
+        <br><br>
+        <label for="">Numero 2:</label>
+        <input type="text" id="txtN2">
+        <br><br>
+        <input type="button" onclick="sumar2();" value="Calcular">
+    </fieldset>
+
+
+	<fieldset>
+        <legend>SUMAR3...Ingrese dos numeros para ser sumados (función con parámetros)</legend>
+        <label for="">Numero 1:</label>
+        <input type="text" id="txtNumero1">
+        <label for="">Numero 2:</label>
+        <input type="text" id="txtNumero2">
+        <input type="button" onclick="var result=sumar3(document.getElementById('txtNumero1').value, document.getElementById('txtNumero2').value);document.getElementById('resultado').innerHTML='Resultado es : ' +result;"
+         value="Calcular">
+         <label id="resultado"></label>
+    </fieldset>
+
+
+	<fieldset>
+		<p>Para aprender los días de la semana usando un for para recorrer un arreglo</p>
+        <input type="button" onclick="diasDeLaSemana();" value="Aprender">		
+	</fieldset>
+
+</form>
+
+
+
+
+</body>
+</html>
